@@ -9,8 +9,8 @@ import torch
 # Initialize Flask
 app = Flask(__name__)
 
-# Configure CORS to allow requests from both local and deployed frontend
-CORS(app, resources={r"/analyze": {"origins": ["http://localhost:5173", "https://sentiment-analysis-review.vercel.app"]}})
+# Configure CORS to allow requests from your React frontend
+CORS(app, resources={r"/analyze": {"origins": "https://sentiment-analysis-review.vercel.app"}})
 
 # Initialize SentimentIntensityAnalyzer (VADER)
 nltk.download('vader_lexicon')
